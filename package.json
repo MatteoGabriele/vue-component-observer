@@ -2,8 +2,48 @@
   "name": "vue-component-observer",
   "description": "Plugin for responsive components",
   "version": "1.0.0",
+  "author": {
+    "name": "Matteo Gabriele",
+    "email": "m.gabriele.dev@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatteoGabriele/vue-component-observer"
+  },
+  "scripts": {
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "main": "dist/vue-component-observer.js",
+  "files": [
+    "dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/MatteoGabriele/vue-component-observer/issues"
+  },
+  "homepage": "https://github.com/MatteoGabriele/vue-component-observer#readme",
+  "keywords": [
+    "responsive",
+    "resize-observer",
+    "breakpoints",
+    "eqcss",
+    "eq",
+    "responsive design",
+    "vue",
+    "vuejs"
+  ],
   "dependencies": {
     "lodash.throttle": "^4.1.1",
     "resize-observer-polyfill": "^1.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "compression-webpack-plugin": "^3.0.0",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
   }
 }
