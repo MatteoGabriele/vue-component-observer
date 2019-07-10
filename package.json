@@ -1,0 +1,9 @@
+{
+  "name": "vue-component-observer",
+  "description": "Plugin for responsive components",
+  "version": "1.0.0",
+  "dependencies": {
+    "lodash.throttle": "^4.1.1",
+    "resize-observer-polyfill": "^1.5.1"
+  }
+}
