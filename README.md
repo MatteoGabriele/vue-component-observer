@@ -17,7 +17,7 @@ import VueComponentObserver from 'vue-component-observer'
 Vue.use(VueComponentObserver)
 ```
 
-Declare the component breakpoints in the root of the component itself and then use the `$eq` computed value to use those values.
+Declare the component breakpoints in the root of the component itself and then use the `$eq` value to use those computations.
 
 ```html
 <template>
