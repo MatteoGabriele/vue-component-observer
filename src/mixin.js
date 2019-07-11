@@ -43,6 +43,10 @@ export default {
     }
   },
 
+  destroyed () {
+    this.$_destroyResizeListener()
+  },
+
   mounted () {
     this.$data.$_vueComponentObserverBreakpoints = this.$options.breakpoints
 
