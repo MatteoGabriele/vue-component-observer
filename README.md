@@ -27,6 +27,8 @@ Declare the component breakpoints in the root of the component itself and then u
 </template>
 
 <script>
+import classnames from 'classnames'
+
 export default {
   name: 'MyComponent',
 
