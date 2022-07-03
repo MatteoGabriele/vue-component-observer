@@ -1,7 +1,9 @@
-import mixin from './mixin'
+import Observable from "./Observable";
 
-export default function install (Vue) {
-  Vue.mixin(mixin)
-}
+export const install = (app, props = {}) => {
+  app.component("Observable", Observable);
+};
 
-export const VueComponentObserver = mixin
+export default install;
+
+export { Observable };
