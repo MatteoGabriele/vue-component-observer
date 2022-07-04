@@ -7,12 +7,7 @@ const props = defineProps({
     default: "div",
   },
   breakpoints: {
-    type: Array,
-    validator(props) {
-      return props.every(([breakpoint, className]) => {
-        return typeof breakpoint === "number" && typeof className === "string";
-      });
-    },
+    type: [Array, Object],
   },
 });
 
@@ -32,11 +27,17 @@ const observer = new ResizeObserver(
 );
 
 const classes = computed(() => {
-  return props.breakpoints.map(([breakpoint, className]) => {
-    return {
-      [className]: sizes.width > breakpoint,
-    };
-  });
+  if (Array.isArray(props.breakpoints)) {
+    return props.breakpoints.reduce((coll, [breakpoint, className]) => {
+      coll[className] = sizes.width > breakpoint;
+      return coll;
+    }, {});
+  }
+
+  return Object.keys(props.breakpoints).reduce((coll, breakpoint) => {
+    coll[breakpoint] = sizes.width > props.breakpoints[breakpoint];
+    return coll;
+  }, {});
 });
 
 onMounted(() => {
