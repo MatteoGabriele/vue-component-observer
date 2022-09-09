@@ -12,10 +12,14 @@
     "url": "https://github.com/MatteoGabriele/vue-component-observer"
   },
   "scripts": {
-    "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production"
+    "dev": "cross-env NODE_ENV=development vite build --watch",
+    "build": "cross-env NODE_ENV=production vite build",
+    "prepublish": "nr build"
   },
-  "main": "dist/vue-component-observer.js",
+  "main": "./dist/vue-component-observer.umd.js",
+  "module": "./dist/vue-component-observer.es.js",
+  "unpkg": "./dist/vue-component-observer.umd.js",
+  "jsdelivr": "./dist/vue-component-observer.umd.js",
   "files": [
     "dist"
   ],
@@ -34,16 +38,13 @@
     "vuejs"
   ],
   "dependencies": {
-    "lodash.throttle": "^4.1.1",
-    "resize-observer-polyfill": "^1.5.1"
+    "just-throttle": "^4.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.6",
-    "compression-webpack-plugin": "^3.0.0",
-    "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.7.2"
+    "@antfu/ni": "^0.18.0",
+    "@vitejs/plugin-vue2": "^1.1.2",
+    "cross-env": "^7.0.3",
+    "vite": "^3.1.0",
+    "vue": "2.7.10"
   }
 }
