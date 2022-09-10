@@ -46,7 +46,6 @@ export default {
     },
 
     $_createResizeListener() {
-      console.log(this.$el);
       const handleResize = (entries) => {
         const { width, height } = entries[0].contentRect;
         this.$data.$_vueComponentObserverSizes = { width, height };
@@ -68,7 +67,15 @@ export default {
   },
 
   mounted() {
-    this.$data.$_vueComponentObserverBreakpoints = this.$options.breakpoints;
+    let breakpoints;
+
+    if (typeof this.$options?.breakpoints === "function") {
+      breakpoints = this.$options.breakpoints.bind(this)(this.$props);
+    } else {
+      breakpoints = this.$options.breakpoints;
+    }
+
+    this.$data.$_vueComponentObserverBreakpoints = breakpoints;
 
     if (this.$data.$_vueComponentObserverBreakpoints) {
       this.$_createResizeListener();
