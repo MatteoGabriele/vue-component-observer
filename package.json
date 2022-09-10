@@ -1,7 +1,7 @@
 {
   "name": "vue-component-observer",
   "description": "Plugin for responsive components",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": {
     "name": "Matteo Gabriele",
     "email": "m.gabriele.dev@gmail.com"
