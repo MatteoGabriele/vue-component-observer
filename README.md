@@ -65,20 +65,20 @@ const breakpoints = {
 </script>
 ```
 
-#### Props list
+### Props list
 
-##### tag
+#### tag
 What tag the Observer component should render
 
 default: 'div'
 
-##### slim
+#### slim
 Render or not a node element
 
 default: false
 
 
-##### breakpoints
+#### breakpoints
 Observer breakpoints. Supports: minWidth, maxWidth, minHeight and maxHeight 
 
 default: null
