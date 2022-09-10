@@ -37,9 +37,6 @@
     "vue",
     "vuejs"
   ],
-  "dependencies": {
-    "just-throttle": "^4.1.1"
-  },
   "devDependencies": {
     "@antfu/ni": "^0.18.0",
     "@vitejs/plugin-vue2": "^1.1.2",

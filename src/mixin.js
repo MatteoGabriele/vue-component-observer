@@ -1,5 +1,3 @@
-import throttle from "just-throttle";
-
 export default {
   data() {
     return {
@@ -11,25 +9,48 @@ export default {
 
   computed: {
     $eq() {
-      const steps = {};
       const breakpoints = this.$data.$_vueComponentObserverBreakpoints;
-      const sizes = this.$data.$_vueComponentObserverSizes;
 
-      for (const key in breakpoints) {
-        const value = breakpoints[key](sizes);
-        steps[key] = value;
+      if (!breakpoints) {
+        return {};
       }
 
-      return steps;
+      return Object.keys(breakpoints).reduce((coll, breakpoint) => {
+        const value = breakpoints[breakpoint];
+
+        coll[breakpoint] = Object.keys(value).some((key) =>
+          this.$_checkMediaCondition(key, value[key])
+        );
+
+        return coll;
+      }, {});
     },
   },
 
   methods: {
+    $_checkMediaCondition(type, value) {
+      const sizes = this.$data.$_vueComponentObserverSizes;
+
+      switch (type) {
+        case "minWidth":
+          return sizes.width >= value;
+        case "maxWidth":
+          return sizes.width <= value;
+        case "minHeight":
+          return sizes.height >= value;
+        case "maxHeight":
+          return sizes.height <= value;
+      }
+
+      return false;
+    },
+
     $_createResizeListener() {
-      const handleResize = throttle((entries) => {
+      console.log(this.$el);
+      const handleResize = (entries) => {
         const { width, height } = entries[0].contentRect;
         this.$data.$_vueComponentObserverSizes = { width, height };
-      }, 200);
+      };
 
       this.$data.$_vueComponentObserver = new ResizeObserver(handleResize);
       this.$data.$_vueComponentObserver.observe(this.$el);

@@ -1,0 +1,7 @@
+{
+  "allowJs": true,
+  "vueCompilerOptions": {
+    "target": 2.7,
+    "experimentalDisableTemplateSupport": true
+  }
+}

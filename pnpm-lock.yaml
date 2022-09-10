@@ -4,12 +4,8 @@ specifiers:
   '@antfu/ni': ^0.18.0
   '@vitejs/plugin-vue2': ^1.1.2
   cross-env: ^7.0.3
-  just-throttle: ^4.1.1
   vite: ^3.1.0
   vue: 2.7.10
-
-dependencies:
-  just-throttle: 4.1.1
 
 devDependencies:
   '@antfu/ni': 0.18.0
@@ -338,10 +334,6 @@ packages:
   /isexe/2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
     dev: true
-
-  /just-throttle/4.1.1:
-    resolution: {integrity: sha512-OK1iESPWjZZnKRYpMsaFb0TSAv74OtbB8CiCRA1tNub1/R0S47n7edXsQ64GtpfIuiGVwSjPNLwkePl4owlDug==}
-    dev: false
 
   /nanoid/3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
